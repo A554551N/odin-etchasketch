@@ -29,3 +29,7 @@ header {
 .sketchElement {
     flex: 1;
 }
+
+.highlightElement {
+    background-color: green;
+}
