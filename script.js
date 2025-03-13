@@ -28,9 +28,17 @@ function drawGrid(gridSize) {
         for (x=0;x<gridSize;x++) {
             const sketchElement=document.createElement("div");
             sketchElement.classList.add("sketchElement");
+            sketchElement.style.opacity = "0";
             row.appendChild(sketchElement);
             sketchElement.addEventListener("mouseover", () => {
-                sketchElement.classList.add("highlightElement");
+                const randomHSL= 'hsl(' + (Math.random() * 360) + ', 100%, 50%)';
+                sketchElement.style.backgroundColor = randomHSL;
+                if (parseFloat(sketchElement.style.opacity) < 1) {
+                    console.log(`Before: ${sketchElement.style.opacity}`)
+                    console.log(parseFloat(sketchElement.style.opacity) + .1)
+                    sketchElement.style.opacity = parseFloat(sketchElement.style.opacity) + .1;
+                    console.log(`After: ${sketchElement.style.opacity}`)
+                }
             })
         }
     }
