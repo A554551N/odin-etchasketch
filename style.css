@@ -17,4 +17,15 @@ header {
     height: 960px;
     border: 2px black solid;
     background-color: white;
+    display:flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex: 1;
+}
+
+.sketchElement {
+    flex: 1;
 }
